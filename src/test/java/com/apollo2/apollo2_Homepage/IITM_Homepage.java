@@ -30,7 +30,7 @@ private RemoteWebDriver driver;
 
     @Test(priority=1)
     public void testSanity() throws InterruptedException {
-    	driver.get("https://apollo2.humanbrain.in/viewer/annotation/portal");
+    	driver.get("https://iitm.humanbrain.in/index.html");
         driver.manage().window().maximize();
         String currentURL = driver.getCurrentUrl();
         System.out.println("Current URL: " + currentURL);
