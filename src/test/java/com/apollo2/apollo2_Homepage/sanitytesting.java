@@ -37,7 +37,7 @@ private RemoteWebDriver driver;
 	       
 	}
 
-    @Test
+    @Test(priority=1)
     public void testSanity() throws InterruptedException {
     	driver.get("https://apollo2.humanbrain.in/viewer/annotation/portal");
         driver.manage().window().maximize();
@@ -45,25 +45,10 @@ private RemoteWebDriver driver;
         System.out.println("Current URL: " + currentURL);
     	 driver.switchTo().frame(0);
         
-        homepagecontent();
-        homepagePeople();
-        homepagehighlights();
-        //Homepageproject();
-        Dataportal();
-        Homenewsandevents();
-        Homecareer();
-        homegallery();
-        Homecontacts();
     }
+    @Test(priority=2)
 
-    @AfterClass
-    public void tearDown() {
-        
-            driver.quit();
-        
-    }
-
-   private void homepagecontent()
+   public void homepagecontent()
    		{
 	   
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
@@ -148,8 +133,9 @@ private RemoteWebDriver driver;
 		   System.out.println("Paragraph 7:"+Paragraph7);
 		   Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
    }
+    @Test(priority=3)
 
-    private void homepagePeople() throws InterruptedException {
+    public void homepagePeople() throws InterruptedException {
 
 		  driver.findElement(By.xpath("(//a[text()='PEOPLE'])[1]")).click();
 		  
@@ -181,7 +167,8 @@ private RemoteWebDriver driver;
 		  scroll();
 
     }
-    private void homepagehighlights() throws InterruptedException
+    @Test(priority=4)
+    public void homepagehighlights() throws InterruptedException
     {
     	 driver.findElement(By.xpath("(//a[text()='HIGHLIGHTS'])[1]")).click();
     	 driver.findElement(By.xpath("//button[text()='Neuroanatomy Histology']")).click();
@@ -196,51 +183,54 @@ private RemoteWebDriver driver;
     	 
     }
 
-    private void Homepageproject() throws InterruptedException {
-    	  driver.findElement(By.xpath("(//a[text()='PROJECT'])[1]")).click();
-    	  driver.findElement(By.xpath("//a[@data-target='#HDviewer']")).click();
-    	  Thread.sleep(9000);
-    	  driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
-    	  Thread.sleep(2000);
-    	  driver.findElement(By.xpath("//a[@data-target='#atlascreator']")).click();
-    	  Thread.sleep(7000);
-    	  driver.findElement(By.xpath("(//button[@type='button'])[4]")).click();
-    	  Thread.sleep(2000);
-    	  driver.findElement(By.xpath("//a[@data-target='#cellannotation']")).click();
-    	  Thread.sleep(9000);
-    	  driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
-    	  Thread.sleep(2000);
-    	  driver.findElement(By.xpath("//a[@data-target='#visualizer']")).click();
-    	  Thread.sleep(5000);
-    	  driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
-    	  Thread.sleep(2000);
-    	  scroll();
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//a[@data-target='#registration']")).click();
-    	  Thread.sleep(7000);
-    	  driver.findElement(By.xpath("(//button[@type='button'])[7]")).click();
-    	  Thread.sleep(2000);
-    	  driver.findElement(By.xpath("//a[@data-target='#seriesviewer']")).click();
-    	  Thread.sleep(6000);
-    	  driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
-    	  Thread.sleep(2000);
-		  
-		  	  
-    }
-    private void Dataportal() throws InterruptedException{
+//    private void Homepageproject() throws InterruptedException {
+//    	  driver.findElement(By.xpath("(//a[text()='PROJECT'])[1]")).click();
+//    	  driver.findElement(By.xpath("//a[@data-target='#HDviewer']")).click();
+//    	  Thread.sleep(9000);
+//    	  driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
+//    	  Thread.sleep(2000);
+//    	  driver.findElement(By.xpath("//a[@data-target='#atlascreator']")).click();
+//    	  Thread.sleep(7000);
+//    	  driver.findElement(By.xpath("(//button[@type='button'])[4]")).click();
+//    	  Thread.sleep(2000);
+//    	  driver.findElement(By.xpath("//a[@data-target='#cellannotation']")).click();
+//    	  Thread.sleep(9000);
+//    	  driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
+//    	  Thread.sleep(2000);
+//    	  driver.findElement(By.xpath("//a[@data-target='#visualizer']")).click();
+//    	  Thread.sleep(5000);
+//    	  driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
+//    	  Thread.sleep(2000);
+//    	  scroll();
+//		  Thread.sleep(2000);
+//		  driver.findElement(By.xpath("//a[@data-target='#registration']")).click();
+//    	  Thread.sleep(7000);
+//    	  driver.findElement(By.xpath("(//button[@type='button'])[7]")).click();
+//    	  Thread.sleep(2000);
+//    	  driver.findElement(By.xpath("//a[@data-target='#seriesviewer']")).click();
+//    	  Thread.sleep(6000);
+//    	  driver.findElement(By.xpath("(//button[@type='button'])[8]")).click();
+//    	  Thread.sleep(2000);
+//		  
+//		  	  
+//    }
+    @Test(priority=5)
+    public void Dataportal() throws InterruptedException{
     
     driver.findElement(By.xpath("((//a[text()='NEWS & EVENTS'])//preceding::a[1])[1]")).click();
     Thread.sleep(2000);
     windowhandle();
     }
+    @Test(priority=6)
 
-    private void Homenewsandevents() throws InterruptedException {
+    public void Homenewsandevents() throws InterruptedException {
     	  driver.findElement(By.xpath("(//a[text()='NEWS & EVENTS'])[1]")).click();
     	  scroll();
 		  Thread.sleep(2000);
     }
+    @Test(priority=7)
 
-    private void Homecareer()  throws InterruptedException {
+    public void Homecareer()  throws InterruptedException {
     	 driver.findElement(By.xpath("(//a[text()='CAREER'])[1]")).click();
     	 Thread.sleep(2000);
     	 driver.findElement(By.xpath("(//a[text()='Apply'])[1]")).click();
@@ -265,15 +255,17 @@ private RemoteWebDriver driver;
 		  Thread.sleep(2000);
 		  
     }
+    @Test(priority=8)
     
-    private void homegallery() throws InterruptedException
+    public void homegallery() throws InterruptedException
     {
     	driver.findElement(By.xpath("(//a[text()='GALLERY'])[1]")).click();
   	  scroll();
 		  Thread.sleep(2000);
     }
+    @Test(priority=9)
 
-    private void Homecontacts() throws InterruptedException  {
+    public void Homecontacts() throws InterruptedException  {
 
 		 driver.findElement(By.xpath("(//a[text()='CONTACTS'])[1]")).click();
 		 scroll();
@@ -321,5 +313,12 @@ private RemoteWebDriver driver;
            Thread.sleep(2000);
            driver.switchTo().window(parentWindowHandle);
           driver.switchTo().frame(0);
+    }
+
+    @AfterClass
+    public void close() {
+        
+            driver.quit();
+        
     }
 }
