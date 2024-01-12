@@ -133,7 +133,7 @@ private RemoteWebDriver driver;
 		   System.out.println("Paragraph 7:"+Paragraph7);
 		   Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
 		   
-		   System.out.println("Homepage  content validtaion is done");
+		   System.out.println("Homepage  content validation is done");
    }
     @Test(priority=3)
 
@@ -226,6 +226,7 @@ private RemoteWebDriver driver;
     driver.findElement(By.xpath("((//a[text()='NEWS & EVENTS'])//preceding::a[1])[1]")).click();
     Thread.sleep(2000);
     windowhandle();
+    System.out.println("Homepage Dataportal validation is done ");
     }
     @Test(priority=6)
 
@@ -234,7 +235,7 @@ private RemoteWebDriver driver;
     	  scroll();
 		  Thread.sleep(2000);
 		  
-		  System.out.println("Homepage Dataportal validation is done ");
+		  System.out.println("Homepage News and Events validation is done ");
     }
     @Test(priority=7)
 
@@ -272,6 +273,8 @@ private RemoteWebDriver driver;
     	driver.findElement(By.xpath("(//a[text()='GALLERY'])[1]")).click();
   	  scroll();
 		  Thread.sleep(2000);
+		  
+		  System.out.println("Homepage Gallery validation is done");
     }
     @Test(priority=9)
 
