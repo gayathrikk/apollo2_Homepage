@@ -132,6 +132,8 @@ private RemoteWebDriver driver;
 		   String Paragraph7=text13.getText();
 		   System.out.println("Paragraph 7:"+Paragraph7);
 		   Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
+		   
+		   System.out.println("Homepage  content validtaion is done");
    }
     @Test(priority=3)
 
@@ -165,6 +167,8 @@ private RemoteWebDriver driver;
 		  
 		  driver.findElement(By.xpath("//button[text()='Wet Lab Team']")).click();
 		  scroll();
+		  
+		  System.out.println("Homepage people validation is done");
 
     }
     @Test(priority=4)
@@ -179,6 +183,8 @@ private RemoteWebDriver driver;
 		  scroll();
 		 driver.findElement(By.xpath("//button[text()='R&D Publications']")).click();
 		  scroll(); 
+		  
+		  System.out.println("Homepage Highlights validation is done");
     	 
     	 
     }
@@ -227,6 +233,8 @@ private RemoteWebDriver driver;
     	  driver.findElement(By.xpath("(//a[text()='NEWS & EVENTS'])[1]")).click();
     	  scroll();
 		  Thread.sleep(2000);
+		  
+		  System.out.println("Homepage Dataportal validation is done ");
     }
     @Test(priority=7)
 
@@ -254,6 +262,8 @@ private RemoteWebDriver driver;
 		  //Homepage.scroll();
 		  Thread.sleep(2000);
 		  
+		  System.out.println("Homepage career validation is done ");
+		  
     }
     @Test(priority=8)
     
@@ -279,6 +289,8 @@ private RemoteWebDriver driver;
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//input[@type='submit']")).click();
 		 Thread.sleep(2000);
+		 
+		 System.out.println("Homepage contacts validation is done ");
 		  
 		  
     }
