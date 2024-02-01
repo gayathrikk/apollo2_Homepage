@@ -168,6 +168,9 @@ private RemoteWebDriver driver;
 		  driver.findElement(By.xpath("//button[text()='Wet Lab Team']")).click();
 		  scroll();
 		  
+		  driver.findElement(By.xpath("//button[text()='Interns']")).click();
+		  scroll();
+		  
 		  System.out.println("Homepage people validation is done");
 
     }
