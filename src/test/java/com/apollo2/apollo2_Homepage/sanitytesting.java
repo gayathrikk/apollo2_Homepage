@@ -52,13 +52,14 @@ private RemoteWebDriver driver;
    		{
 	   
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
-	   WebElement text1=driver.findElement(By.xpath("//h2[@class='head']"));
+	   WebElement text1=driver.findElement(By.xpath("//*[@id='title']/h2"));
 	   String Heading1 =text1.getText();
 	   System.out.println("Head1:"+Heading1);
 	   Assert.assertEquals(Heading1, heading1, "Heading1 are not equal");
-	   
+	
 	   String heading2="Indian Institute of Technology Madras";
-	   WebElement text2=driver.findElement(By.xpath("(//h2[@class='head']//following::h5)[1]"));
+	   WebElement text2=driver.findElement(By.xpath("//*[@id='title']/h5"));
+	   //WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h1[@class='head']//following::h5)[1]")));
 	   String Heading2 =text2.getText();
 	   System.out.println("Head2:"+Heading2);
 	   Assert.assertEquals(Heading2, heading2, "Heading2 are not equal");
