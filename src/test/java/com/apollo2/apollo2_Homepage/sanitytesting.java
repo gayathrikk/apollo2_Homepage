@@ -32,7 +32,7 @@ private RemoteWebDriver driver;
 	public void setup() throws MalformedURLException
 	{
 		  DesiredCapabilities dc = DesiredCapabilities.chrome();
-	        URL url = new URL("http://172.20.23.92:4444/wd/hub");
+		  URL url = new URL("http://172.20.23.92:4444/wd/hub");
 	        driver = new RemoteWebDriver(url, dc);
 	       
 	}
@@ -49,8 +49,7 @@ private RemoteWebDriver driver;
     @Test(priority=2)
 
    public void homepagecontent()
-   		{
-	   
+    		{
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
 	   WebElement text1=driver.findElement(By.xpath("//*[@id='title']/h2"));
 	   String Heading1 =text1.getText();
@@ -246,28 +245,51 @@ private RemoteWebDriver driver;
     public void Homecareer()  throws InterruptedException {
     	 driver.findElement(By.xpath("(//a[text()='CAREER'])[1]")).click();
     	 Thread.sleep(2000);
-    	 driver.findElement(By.xpath("(//a[text()='Apply'])[1]")).click();
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[1]")).click();
+    	 Thread.sleep(2000);
+    	 System.out.println("The Tester job apply button clicked sucessfully");
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[1]")).click();
+    	System.out.println("The Tester Intern apply button clicked sucessfully");
+    	windowhandle();
+   	    driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[2]")).click();
+    	 Thread.sleep(3000);
+    	 System.out.println("The Python Developer job apply button clicked sucessfully");
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[2]")).click();
+    	 Thread.sleep(3000);
+    	 System.out.println("The Python Developer Intern apply button clicked sucessfully");
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[3]")).click();
+    	 Thread.sleep(3000);
+    	 System.out.println(" The Angular Developer job apply button clicked sucessfully");
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[3]")).click();
     	 Thread.sleep(3000);
     	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[text()='Apply'])[2]")).click();
-    	 Thread.sleep(3000);
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[4]")).click();
+    	 Thread.sleep(2000);
+    	 System.out.println("The Deveops Engineer job apply button clicked sucessfully");
     	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[text()='Apply'])[3]")).click();
-    	 Thread.sleep(3000);
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[text()='Apply'])[4]")).click();
-    	 Thread.sleep(3000);
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[text()='Apply'])[5]")).click();
-    	 Thread.sleep(3000);
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[text()='Apply'])[6]")).click();
-    	 Thread.sleep(3000);
-    	 windowhandle();
-		  //Homepage.scroll();
-		  Thread.sleep(2000);
-		  
-		  System.out.println("Homepage career validation is done ");
+    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[4]")).click();
+    	System.out.println("The Deveops Engineer  Intern apply button clicked sucessfully");
+    	windowhandle();    	 
+    driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[5]")).click();
+   	 Thread.sleep(2000);
+   	 System.out.println("The Sytem Administrator job apply button clicked sucessfully");
+   	 windowhandle();
+   	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[5]")).click();
+   	System.out.println("The Sytem Administrator  Intern apply button clicked sucessfully");
+   	windowhandle();
+
+   	driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[6]")).click();
+  	 Thread.sleep(2000);
+  	 System.out.println("The UI Developer job apply button clicked sucessfully");
+  	 windowhandle();
+  	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[6]")).click();
+  	System.out.println("The UI Developer Intern apply button clicked sucessfully");
+  	windowhandle();
+    		  System.out.println("Homepage career validation is done ");
 		  
     }
     @Test(priority=8)
@@ -297,11 +319,11 @@ private RemoteWebDriver driver;
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//textarea[@id='MultiLine-arialabel']")).sendKeys("Testing purpose" );
 		 Thread.sleep(1000);
-		 // driver.findElement(By.xpath("(//button[@value='submit'])[1]")).click();
-		 // Thread.sleep(2000);
-		 // WebElement submitmessage=driver.findElement(By.xpath("//span[@class='alignCenter infoCont thankyouMsgText']"));
-		 // String Sumbitmessage=submitmessage.getText();
-		 // System.out.println("Submitted message is = "+Sumbitmessage);
+		 driver.findElement(By.xpath("(//button[@value='submit'])[1]")).click();
+		 Thread.sleep(2000);
+		 WebElement submitmessage=driver.findElement(By.xpath("//span[@class='alignCenter infoCont thankyouMsgText']"));
+		 String Sumbitmessage=submitmessage.getText();
+		 System.out.println("Submitted message is = "+Sumbitmessage);
 		 System.out.println("Homepage contacts validation is done ");
 		  
     }
