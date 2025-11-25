@@ -52,7 +52,7 @@ private RemoteWebDriver driver;
    		{
 	   
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
-	   WebElement text1=driver.findElement(By.xpath("//h1[@class='head']"));
+	   WebElement text1=driver.findElement(By.xpath("//h1[@class='head m-0']"));
 	   String Heading1 =text1.getText();
 	   System.out.println("Head1:"+Heading1);
 	   Assert.assertEquals(Heading1, heading1, "Heading1 are not equal");
