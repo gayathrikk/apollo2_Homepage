@@ -44,6 +44,7 @@ private RemoteWebDriver driver;
         String currentURL = driver.getCurrentUrl();
         System.out.println("Current URL: " + currentURL);
     	 driver.switchTo().frame(0);
+		 Thread.sleep(4000);
         
     }
     @Test(priority=2)
