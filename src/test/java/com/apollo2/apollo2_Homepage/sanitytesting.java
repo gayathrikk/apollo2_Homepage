@@ -50,6 +50,42 @@ private RemoteWebDriver driver;
 
    public void homepagecontent()
     		{
+
+		WebDriverWait wait1 = new WebDriverWait(driver, 20);
+		WebElement login = wait1
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='auth-button']")));
+		login.click();
+		System.out.println("The login Button is clicked");
+		Thread.sleep(4000);
+		WebDriverWait wait2 = new WebDriverWait(driver, 20);
+		WebElement emailInput = wait2
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='email']")));
+		emailInput.sendKeys("teamsoftware457@gmail.com");
+		System.out.println("Mail I'd is entered");
+		WebDriverWait wait3 = new WebDriverWait(driver, 20);
+		WebElement Next = wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
+		Next.click();
+		System.out.println("The Next Button is clicked");
+		WebDriverWait wait4 = new WebDriverWait(driver, 20);
+		WebElement PasswordInput = wait4
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='password']")));
+		PasswordInput.sendKeys("Health#123");
+		System.out.println("Password is entered");
+		WebDriverWait wait5 = new WebDriverWait(driver, 20);
+		WebElement Next2 = wait5.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
+		Next2.click();
+		System.out.println("The Next Button is clicked");
+		Thread.sleep(3000);
+		WebDriverWait wait6 = new WebDriverWait(driver, 20);
+		WebElement continuebutton = wait6.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Continue']")));
+		continuebutton.click();
+		Thread.sleep(5000);
+
+		WebDriverWait wait7 = new WebDriverWait(driver, 20);
+		WebElement Homepage = wait7.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Home']")));
+		Homepage.click();
+		Thread.sleep(4000);
+				
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
 	   WebElement text1=driver.findElement(By.xpath("//*[@id='title']/h2"));
 	   String Heading1 =text1.getText();
