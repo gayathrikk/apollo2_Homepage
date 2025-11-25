@@ -43,7 +43,7 @@ private RemoteWebDriver driver;
         driver.manage().window().maximize();
         String currentURL = driver.getCurrentUrl();
         System.out.println("Current URL: " + currentURL);
-    	 driver.switchTo().frame(0);
+    	
         
     }
     @Test(priority=2)
@@ -85,7 +85,7 @@ private RemoteWebDriver driver;
 		WebElement Homepage = wait7.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Home']")));
 		Homepage.click();
 		Thread.sleep(4000);
-				
+		driver.switchTo().frame(0);
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
 	   WebElement text1=driver.findElement(By.xpath("//*[@id='title']/h2"));
 	   String Heading1 =text1.getText();
