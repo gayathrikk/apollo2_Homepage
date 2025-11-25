@@ -31,8 +31,8 @@ private RemoteWebDriver driver;
 	
 	public void setup() throws MalformedURLException
 	{
-		  DesiredCapabilities dc = DesiredCapabilities.chrome();
-	        URL url = new URL("http://172.22.0.5:4443/wd/hub");
+		 	DesiredCapabilities dc = DesiredCapabilities.chrome();
+	        URL url = new URL("http://172.22.0.5:4444/wd/hub");
 	        driver = new RemoteWebDriver(url, dc);
 	       
 	}
