@@ -48,7 +48,7 @@ private RemoteWebDriver driver;
     }
     @Test(priority=2)
 
-   public void homepagecontent()
+   public void homepagecontent() throws InterruptedException
     		{
 
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
