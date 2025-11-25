@@ -32,7 +32,7 @@ private RemoteWebDriver driver;
 	public void setup() throws MalformedURLException
 	{
 		  DesiredCapabilities dc = DesiredCapabilities.chrome();
-		  URL url = new URL("http://172.22.0.5:4444/wd/hub");
+	        URL url = new URL("http://172.22.0.5:4443/wd/hub");
 	        driver = new RemoteWebDriver(url, dc);
 	       
 	}
@@ -43,58 +43,22 @@ private RemoteWebDriver driver;
         driver.manage().window().maximize();
         String currentURL = driver.getCurrentUrl();
         System.out.println("Current URL: " + currentURL);
-    	
+    	 driver.switchTo().frame(0);
         
     }
     @Test(priority=2)
 
-   public void homepagecontent() throws InterruptedException
-    		{
-
-		WebDriverWait wait1 = new WebDriverWait(driver, 20);
-		WebElement login = wait1
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='auth-button']")));
-		login.click();
-		System.out.println("The login Button is clicked");
-		Thread.sleep(4000);
-		WebDriverWait wait2 = new WebDriverWait(driver, 20);
-		WebElement emailInput = wait2
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='email']")));
-		emailInput.sendKeys("teamsoftware457@gmail.com");
-		System.out.println("Mail I'd is entered");
-		WebDriverWait wait3 = new WebDriverWait(driver, 20);
-		WebElement Next = wait3.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
-		Next.click();
-		System.out.println("The Next Button is clicked");
-		WebDriverWait wait4 = new WebDriverWait(driver, 20);
-		WebElement PasswordInput = wait4
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='password']")));
-		PasswordInput.sendKeys("Health#123");
-		System.out.println("Password is entered");
-		WebDriverWait wait5 = new WebDriverWait(driver, 20);
-		WebElement Next2 = wait5.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
-		Next2.click();
-		System.out.println("The Next Button is clicked");
-		Thread.sleep(3000);
-		WebDriverWait wait6 = new WebDriverWait(driver, 20);
-		WebElement continuebutton = wait6.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Continue']")));
-		continuebutton.click();
-		Thread.sleep(5000);
-
-		WebDriverWait wait7 = new WebDriverWait(driver, 20);
-		WebElement Homepage = wait7.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@title='Home']")));
-		Homepage.click();
-		Thread.sleep(4000);
-		driver.switchTo().frame(0);
+   public void homepagecontent()
+   		{
+	   
 	   String heading1="Sudha Gopalakrishnan Brain Centre";
-	   WebElement text1=driver.findElement(By.xpath("//*[@id='title']/h2"));
+	   WebElement text1=driver.findElement(By.xpath("//h1[@class='head']"));
 	   String Heading1 =text1.getText();
 	   System.out.println("Head1:"+Heading1);
 	   Assert.assertEquals(Heading1, heading1, "Heading1 are not equal");
-	
+	   
 	   String heading2="Indian Institute of Technology Madras";
-	   WebElement text2=driver.findElement(By.xpath("//*[@id='title']/h5"));
-	   //WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h1[@class='head']//following::h5)[1]")));
+	   WebElement text2=driver.findElement(By.xpath("(//h1[@class='head']//following::h5)[1]"));
 	   String Heading2 =text2.getText();
 	   System.out.println("Head2:"+Heading2);
 	   Assert.assertEquals(Heading2, heading2, "Heading2 are not equal");
@@ -163,11 +127,11 @@ private RemoteWebDriver driver;
 	   System.out.println("Paragraph 6:"+Paragraph6);
 	   Assert.assertEquals(Paragraph6, paragraph6, "Paragraph 6 are not equal");
 	   
-	//   String paragraph7="© All Rights Reserved. Designed by HTML Codex";
-	  //	   WebElement text13=driver.findElement(By.xpath("(//h1[@class='Brain-title']//following::p)[7]"));
-	//   String Paragraph7=text13.getText();
-       //     System.out.println("Paragraph 7:"+Paragraph7);
-      //      Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
+	   String paragraph7="© All Rights Reserved. Designed by HTML Codex";
+		   WebElement text13=driver.findElement(By.xpath("(//h1[@class='Brain-title']//following::p)[7]"));
+		   String Paragraph7=text13.getText();
+		   System.out.println("Paragraph 7:"+Paragraph7);
+		   Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
 		   
 		   System.out.println("Homepage  content validation is done");
    }
@@ -281,51 +245,28 @@ private RemoteWebDriver driver;
     public void Homecareer()  throws InterruptedException {
     	 driver.findElement(By.xpath("(//a[text()='CAREER'])[1]")).click();
     	 Thread.sleep(2000);
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[1]")).click();
-    	 Thread.sleep(2000);
-    	 System.out.println("The Tester job apply button clicked sucessfully");
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[1]")).click();
-    	System.out.println("The Tester Intern apply button clicked sucessfully");
-    	windowhandle();
-   	    driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[2]")).click();
-    	 Thread.sleep(3000);
-    	 System.out.println("The Python Developer job apply button clicked sucessfully");
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[2]")).click();
-    	 Thread.sleep(3000);
-    	 System.out.println("The Python Developer Intern apply button clicked sucessfully");
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[3]")).click();
-    	 Thread.sleep(3000);
-    	 System.out.println(" The Angular Developer job apply button clicked sucessfully");
-    	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[3]")).click();
+    	 driver.findElement(By.xpath("(//a[text()='Apply'])[1]")).click();
     	 Thread.sleep(3000);
     	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[4]")).click();
-    	 Thread.sleep(2000);
-    	 System.out.println("The Deveops Engineer job apply button clicked sucessfully");
+    	 driver.findElement(By.xpath("(//a[text()='Apply'])[2]")).click();
+    	 Thread.sleep(3000);
     	 windowhandle();
-    	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[4]")).click();
-    	System.out.println("The Deveops Engineer  Intern apply button clicked sucessfully");
-    	windowhandle();    	 
-    driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[5]")).click();
-   	 Thread.sleep(2000);
-   	 System.out.println("The Sytem Administrator job apply button clicked sucessfully");
-   	 windowhandle();
-   	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[5]")).click();
-   	System.out.println("The Sytem Administrator  Intern apply button clicked sucessfully");
-   	windowhandle();
-
-   	driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/jobapp/formperma/xtBbdj-surJGd8BlEaVBSsOzV-orSZmV3sKatA19G6I'])[6]")).click();
-  	 Thread.sleep(2000);
-  	 System.out.println("The UI Developer job apply button clicked sucessfully");
-  	 windowhandle();
-  	 driver.findElement(By.xpath("(//a[@href='https://form.humanbrain.in/SGBC/form/SudhaGopalakrishnanBrainCentreIITMadras/formperma/LNdNPfseClgUqCLIHJ7uKlAtjL3PUpHyJ5mYY8HvSfQ'])[6]")).click();
-  	System.out.println("The UI Developer Intern apply button clicked sucessfully");
-  	windowhandle();
-    		  System.out.println("Homepage career validation is done ");
+    	 driver.findElement(By.xpath("(//a[text()='Apply'])[3]")).click();
+    	 Thread.sleep(3000);
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[text()='Apply'])[4]")).click();
+    	 Thread.sleep(3000);
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[text()='Apply'])[5]")).click();
+    	 Thread.sleep(3000);
+    	 windowhandle();
+    	 driver.findElement(By.xpath("(//a[text()='Apply'])[6]")).click();
+    	 Thread.sleep(3000);
+    	 windowhandle();
+		  //Homepage.scroll();
+		  Thread.sleep(2000);
+		  
+		  System.out.println("Homepage career validation is done ");
 		  
     }
     @Test(priority=8)
@@ -355,12 +296,13 @@ private RemoteWebDriver driver;
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//textarea[@id='MultiLine-arialabel']")).sendKeys("Testing purpose" );
 		 Thread.sleep(1000);
-		// driver.findElement(By.xpath("(//button[@value='submit'])[1]")).click();
-		// Thread.sleep(2000);
-		// WebElement submitmessage=driver.findElement(By.xpath("//span[@class='alignCenter infoCont thankyouMsgText']"));
-		// String Sumbitmessage=submitmessage.getText();
-		// System.out.println("Submitted message is = "+Sumbitmessage);
-		// System.out.println("Homepage contacts validation is done ");
+		 driver.findElement(By.xpath("(//button[@value='submit'])[1]")).click();
+		 Thread.sleep(2000);
+		 WebElement submitmessage=driver.findElement(By.xpath("//span[@class='alignCenter infoCont thankyouMsgText']"));
+		 String Sumbitmessage=submitmessage.getText();
+		 System.out.println("Submitted message is = "+Sumbitmessage);
+		 System.out.println("Homepage contacts validation is done ");
+		  
 		  
     }
     
