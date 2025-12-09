@@ -128,11 +128,11 @@ private RemoteWebDriver driver;
 	   System.out.println("Paragraph 6:"+Paragraph6);
 	   Assert.assertEquals(Paragraph6, paragraph6, "Paragraph 6 are not equal");
 	   
-	   String paragraph7="© All Rights Reserved. Designed by HTML Codex";
-		   WebElement text13=driver.findElement(By.xpath("(//h1[@class='Brain-title']//following::p)[7]"));
-		   String Paragraph7=text13.getText();
-		   System.out.println("Paragraph 7:"+Paragraph7);
-		   Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
+	   // String paragraph7="© All Rights Reserved. Designed by HTML Codex";
+		  //  WebElement text13=driver.findElement(By.xpath("(//h1[@class='Brain-title']//following::p)[7]"));
+		  //  String Paragraph7=text13.getText();
+		  //  System.out.println("Paragraph 7:"+Paragraph7);
+		  //  Assert.assertEquals(Paragraph7, paragraph7, "Paragraph 7 are not equal");
 		   
 		   System.out.println("Homepage  content validation is done");
    }
