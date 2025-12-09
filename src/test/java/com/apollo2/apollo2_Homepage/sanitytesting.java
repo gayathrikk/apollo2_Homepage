@@ -59,7 +59,7 @@ private RemoteWebDriver driver;
 	   Assert.assertEquals(Heading1, heading1, "Heading1 are not equal");
 	   
 	   String heading2="Indian Institute of Technology Madras";
-	   WebElement text2=driver.findElement(By.xpath("(//h1[@class='head m-0']//following::h5)[1]"));
+	   WebElement text2=driver.findElement(By.xpath("(//h1[@class='head']//following::h5)[1]"));
 	   String Heading2 =text2.getText();
 	   System.out.println("Head2:"+Heading2);
 	   Assert.assertEquals(Heading2, heading2, "Heading2 are not equal");
